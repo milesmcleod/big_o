@@ -116,23 +116,6 @@ end
 # length 3: 6 computations.
 # length 4: 10 computations.
 #
-# This is (n * ((n+1) / 2)). The outer loop runs in n time, and for
-# each n, the search runs in (n+1)/2 time. Ultimately, when constants
+# This is (n * (2 * (n+1))). The outer loop runs in n time, and for
+# each n, the search runs in 2 * (n + 1) time. Ultimately, when constants
 # are canceled, this runs in O(n^2).
-
-
-
-
-
-
-
-
-# O(n^2): Quadratic time. For each stage in the top level each loop, the search
-# function is going to run, which has a linear complexity, which we
-# will call O(m), where m is determined by the length of the target.
-# As we iterate on the top level, we increase the length of
-# the target by 1 each time, so we can really consider the nested
-# search to now have a time complexity of O(n + m). Because we run
-# the search function n times, this gives us a final time complexity
-# of O(n * (n + m)), resulting ultimately in a quadratic complexity,
-# O(n^2).
